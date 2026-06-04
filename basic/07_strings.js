@@ -14,3 +14,6 @@ console.log(`Hello my name is ${name} and my repo count is ${RepoCount}`)
 const gameName = new String('Adhiviraj')
 console.log(gameName) //for this method the String is stored in key value pair 
 // data types will be object
+
+console.log(gameName[0]);
+console.log()
