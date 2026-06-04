@@ -1,0 +1,6 @@
+console.log(myDates.toDateString())
+// console.log(myDates.toISOString())
+// console.log(myDates.toJSON())
+// console.log(myDates.toLocaleDateString())
+// console.log(myDates.toLocaleString())
+// console.log(typeof myDates)
