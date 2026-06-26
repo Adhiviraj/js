@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>querySelector Relations Demo</title>
+</head>
+<body>
+  <div class="container">
+    <div class="day">Day div</div>
+    <div class="night">Night div</div>
+    <div class="extra">Extra div</div>
+  </div>
+
+  <script>
+    // 1. Direct selection by class
+    document.querySelector(".day").style.color = "blue";
+
+    // 2. Parent element relation
+    let parent = document.querySelector(".day").parentElement;
+    parent.style.border = "2px solid gray";
+
+    // 3. First child of parent
+    parent.firstElementChild.style.backgroundColor = "lightyellow";
+
+    // 4. Last child of parent
+    parent.lastElementChild.style.backgroundColor = "lightgreen";
+
+    // 5. Next sibling relation
+    document.querySelector(".day").nextElementSibling.style.fontWeight = "bold";
+
+    // 6. Previous sibling relation
+    document.querySelector(".night").previousElementSibling.style.textDecoration = "underline";
+
+    // 7. Nested querySelector (find inside parent)
+    parent.querySelector(".extra").style.padding = "10px";
+
+    // 8. Multiple elements with querySelectorAll
+    document.querySelectorAll(".container div").forEach(el => {
+      el.style.margin = "5px";
+    });
+  </script>
+</body>
+</html>
