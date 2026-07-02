@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html Events</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing Images</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="Ferrai f24" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8zvMpnFUHbRjdvvKJGU18ewcPuuK1pfIfrx40yyd54vyBEsvKhvpDJ7KG&s=10" alt="Ferrari sf 26"></li>
+            <li><img width="200px" id="Mercedes f1 2026" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTrIiLFvL8bMyPiHKi3-EKf3FsurM9uVsVUtnQVfUMdHyXPn_skrsHQ8A&s=10" alt="Mercedes f1 2026"></li>
+            <li><img width="200px" id="" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScJ-KgZV3OZtMtSxA1HelfG_DRJjXinLX69yGmzeHbnw&s=10" alt="Bmw m5 Comp"></li>
+            <li><img width="200px" id="photoshop" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1q7jreB2S4MpWm3k-fLWZTiah3mjdtg8PuJIrNcRho3mcaoRu55NX88Y&s=10" alt="Bmw m5"></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+
+<script>
+    // document.getElementById('Ferrai f24').onclick = function(){
+    //     alert("Ferrari 2026 f1 car")
+    // }
+    // attachEvent()
+    // jQuery - on 
+
+    // document.getElementById('Ferrai f24').addEventListener('click', function(e){
+    //     alert("Ferrari 2026 f1 car")
+    //     console.log(e);
+    // }, false)
+    // type,timestamp , defaultPrevented
+    // Target, toElement,srcElement, currentTarget,
+    // clientX,clientY,screenX , screenY
+    // altkey, clrtKey, shiftKey , Keycode
+
+    // document.getElementById('Ferrai f24').addEventListener('click', function(e){
+    //     e.stopPropagation(); // this will step bubbling 
+    //     console.log("CLick inside the ferrari");
+    // }, false)
+
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("CLick inside the ul");
+    // }, false)
+    // // Capturing Phase (true)
+
+    // // The event travels from the top down to the target.
+
+    // // 2. Bubbling Phase (false or omitted)
+    // // After reaching the target, the event bubbles from the target back up.
+
+    // document.getElementById('google').addEventListener('click',function(e){
+    //     e.preventDefault()
+    //     e.stopPropagation()
+    //     console.log("Google clicked")
+    // },false)
+
+    document.querySelector('#images').addEventListener('click', function(e) {
+        console.log(e.target.tagName)
+        if(e.target.tagName === 'IMG'){
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode;
+            removeIt.remove();
+        }
+        
+    },false) 
+
+    // removeIt.parentNode.removeChild(removeIt);
+</script>
+</html>
